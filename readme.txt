@@ -1,26 +1,24 @@
 === WP Slug Translate ===
 Contributors: boliquan
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=SKA6TPPWSATKG&item_name=BoLiQuan&no_shipping=0&no_note=1&tax=0&currency_code=USD&lc=CA&bn=PP%2dDonationsBF&charset=UTF%2d8
-Tags: wp slug translate,wp slug,slug,translate,bing,post name,post id,post title,translator,translation,permalink,english,seo,url,title,auto slug,translate title,translate permalink,post
+Tags: wp slug translate,wp slug,slug,translate,bing,post name,post id,post title,translator,translation,permalink,english,seo,url,title
 License: GPLv2
 Requires at least: 2.7
 Tested up to: 3.3.2
-Stable tag: 1.1.7
+Stable tag: 1.7.0
 
-WP Slug Translate can translate the post slug into English. It will take the post ID as slug when translation failure.
+WP Slug Translate can translate the post slug into English,it will take the post ID as slug when translation failure.
 
 
 == Description ==
 
 WP Slug Translate can translate the post slug into english.
 It will take the post ID as slug when translation failure.
-If you enter the slug manually, the result will depend on you have entered.
-WP Slug Translate won't overwrite an existing slug, you can try to re-translate by deleting the existing one.
-38 languages supported, powered by Microsoft's Bing Translator.
+38 languages supported, powered by Microsoft's smart translation system.
 It can make your URL looks better and shoud be more SEO friendly.
 You can apply for your own Bing APP_ID and you can also use the default one.
 You need to choose your language on the settings page.
-It can delete its own options if you need to deactivate it, so it is a green plugin!
+It can delete its own options if you need to deactivate it, so it is a green plugin !
 
 = Basic Usage =
 
@@ -57,11 +55,7 @@ Related Links:
 
 == Changelog ==
 
-= 1.1.7 =
-
-* Some optimization
-
-= 1.1.6 =
+= 1.7.0 =
 
 * Add admin page
 * 38 languages supported
