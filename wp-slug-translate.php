@@ -2,8 +2,8 @@
 /*
 Plugin Name: WP Slug Translate
 Plugin URI: http://boliquan.com/wp-slug-translate/
-Description: WP Slug Translate can translate the post slug into English,it will take the post ID as slug when translation failure.
-Version: 1.7.0
+Description: WP Slug Translate can translate the post slug into English. It will take the post ID as slug when translation failure.
+Version: 1.7.1
 Author: BoLiQuan
 Author URI: http://boliquan.com/
 Text Domain: WP-Slug-Translate
@@ -24,16 +24,17 @@ function load_wp_slug_translate_lang(){
 }
 add_filter('init','load_wp_slug_translate_lang');
 
-function wst_get_html($url,$cookie=''){
-	$curl = curl_init($url);
-	$useragent="Mozilla/5.0 (Windows NT 5.1; rv:6.0.1) Gecko/20100101 Firefox/6.0.1";
-	curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
-	curl_setopt($curl, CURLOPT_USERAGENT, $useragent);
-	if ($cookie<>'') {
-		curl_setopt ($curl, CURLOPT_COOKIE, $cookie);
-	}
-	$data = curl_exec($curl);
-	curl_close($curl);
+function wst_get_html($url){
+	$ch = curl_init();
+	$options = array(
+		CURLOPT_URL => $url,
+		CURLOPT_RETURNTRANSFER => 1,
+		CURLOPT_USERAGENT => 'Mozilla/5.0 (Windows NT 5.1; rv:6.0.1) Gecko/20100101 Firefox/6.0.1',
+		CURLOPT_HEADER => 0
+		);
+	curl_setopt_array($ch,$options);
+	$data = curl_exec($ch);
+	curl_close($ch);
 	return $data;
 }
 
