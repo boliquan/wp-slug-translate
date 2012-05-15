@@ -1,11 +1,11 @@
 === WP Slug Translate ===
 Contributors: boliquan
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=SKA6TPPWSATKG&item_name=BoLiQuan&no_shipping=0&no_note=1&tax=0&currency_code=USD&lc=CA&bn=PP%2dDonationsBF&charset=UTF%2d8
-Tags: wp slug translate,wp slug,slug,translate,bing,post name,post id,post title,translator,translation,permalink,english,seo,url,title,auto slug,translate title,translate permalink,post
+Tags: wp slug translate,wp slug,slug,translate,bing,post name,post id,post title,post slug,translator,translation,permalink,english,seo,url,title,auto slug,translate title,translate permalink,post
 License: GPLv2
 Requires at least: 2.7
 Tested up to: 3.3.2
-Stable tag: 1.7.1
+Stable tag: 1.7.2
 
 WP Slug Translate can translate the post slug into English. It will take the post ID as slug when translation failure.
 
@@ -56,6 +56,10 @@ Related Links:
 
 
 == Changelog ==
+
+= 1.7.2 =
+
+* Saving time when you finish editing the post
 
 = 1.7.1 =
 

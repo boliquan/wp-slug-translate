@@ -3,7 +3,7 @@
 Plugin Name: WP Slug Translate
 Plugin URI: http://boliquan.com/wp-slug-translate/
 Description: WP Slug Translate can translate the post slug into English. It will take the post ID as slug when translation failure.
-Version: 1.7.1
+Version: 1.7.2
 Author: BoLiQuan
 Author URI: http://boliquan.com/
 Text Domain: WP-Slug-Translate
@@ -52,14 +52,13 @@ function wp_slug_translate($postID){
 		$res = $wpdb->get_results($sql);	
 		$post_title = $res[0]->post_title;
 		$post_name = $res[0]->post_name;
-		$wst_title = wst_get_translate($post_title);
-		
+
 		if( sanitize_title($post_title) != $post_name ) {
 			if( !substr_count($post_name,'%') )
 				return true;
 		}
 
-		$wst_title = sanitize_title($wst_title);
+		$wst_title = sanitize_title(wst_get_translate($post_title));
 		if( strlen($wst_title) < 2 ) {
 			$wst_title = $postID;
 		}
