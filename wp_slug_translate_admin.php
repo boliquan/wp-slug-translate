@@ -1,8 +1,8 @@
 <?php
 function wp_slug_translate_admin(){
-	add_options_page('WP Slug Translate Options', 'WP Slug Translate','manage_options', __FILE__, 'wp_slug_translate_page');
+	add_options_page('WP Slug Translate Options', 'WP Slug Translate','manage_options', __FILE__, 'wp_slug_translate_options');
 }
-function wp_slug_translate_page(){
+function wp_slug_translate_options(){
 ?>
 <div class="wrap">
 	
@@ -19,7 +19,7 @@ function wp_slug_translate_page(){
 		</th>
 		<td>
 			<label>
-				<input type="text" name="wp_slug_translate_appid" value="<?php echo get_option('wp_slug_translate_appid'); ?>" style="width:300px;height:24px;" />
+				<input type="text" name="wp_slug_translate_appid" value="<?php echo get_option('wp_slug_translate_appid'); ?>" size="43" />
 			</label>
 			<a href="http://www.bing.com/developers/appids.aspx" target="_blank"><?php _e('Apply for your own app id (Recommend)','WP-Slug-Translate'); ?></a>
 		</td>
