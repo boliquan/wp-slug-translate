@@ -5,7 +5,7 @@ Tags: wp slug translate,wp slug,slug,translate,bing,post name,post id,post title
 License: GPLv2
 Requires at least: 2.7
 Tested up to: 3.3.2
-Stable tag: 1.7.2
+Stable tag: 1.7.3
 
 WP Slug Translate can translate the post slug into English. It will take the post ID as slug when translation failure.
 
@@ -28,7 +28,8 @@ It can delete its own options if you need to deactivate it, so it is a green plu
 2. Activate the plugin through the "Plugins" menu in WordPress
 3. "Settings"->"WP Slug Translate"
 4. "APP_ID": Input your own Bing APP_ID, you can also use the default one
-5. "Source Language": Choose your language
+5. "Source Language": Choose your language, 38 languages supported
+6. When you have written an article, click "Publish", then the post slug will be automatically translated into English
 
 = More Information =
 
@@ -52,10 +53,15 @@ Related Links:
 2. Activate the plugin through the "Plugins" menu in WordPress
 3. "Settings"->"WP Slug Translate"
 4. "APP_ID": Input your own Bing APP_ID, you can also use the default one
-5. "Source Language": Choose your language
+5. "Source Language": Choose your language, 38 languages supported
+6. When you have written an article, click "Publish", then the post slug will be automatically translated into English
 
 
 == Changelog ==
+
+= 1.7.3 =
+
+* Detailed usage
 
 = 1.7.2 =
 
