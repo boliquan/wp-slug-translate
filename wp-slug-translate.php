@@ -3,15 +3,15 @@
 Plugin Name: WP Slug Translate
 Plugin URI: http://boliquan.com/wp-slug-translate/
 Description: WP Slug Translate can translate the post slug into English. It will take the post ID as slug when translation failure.
-Version: 1.7.3
+Version: 1.8.0
 Author: BoLiQuan
 Author URI: http://boliquan.com/
 Text Domain: WP-Slug-Translate
 Domain Path: /lang
 */
 
-//http://www.bing.com/developers/appids.aspx
-define("APP_ID",get_option('wp_slug_translate_appid'));
+define("CLIENTID",get_option('wp_slug_translate_clientid'));
+define("CLIENTSECRET",get_option('wp_slug_translate_clientsecret'));
 define("SOURCE",get_option('wp_slug_translate_language'));
 define("TARGET","en");
 
@@ -24,27 +24,94 @@ function load_wp_slug_translate_lang(){
 }
 add_filter('init','load_wp_slug_translate_lang');
 
-function wst_get_html($url){
-	$ch = curl_init();
-	$options = array(
-		CURLOPT_URL => $url,
-		CURLOPT_RETURNTRANSFER => 1,
-		CURLOPT_USERAGENT => 'Mozilla/5.0 (Windows NT 5.1; rv:6.0.1) Gecko/20100101 Firefox/6.0.1',
-		CURLOPT_HEADER => 0
-		);
-	curl_setopt_array($ch,$options);
-	$data = curl_exec($ch);
-	curl_close($ch);
-	return $data;
+abstract class Translate 
+{
+    function curlRequest($url, $header = array(), $postData = ''){
+        $ch = curl_init();
+        curl_setopt($ch, CURLOPT_URL, $url);
+        if (!empty($header)) {
+            curl_setopt($ch, CURLOPT_HTTPHEADER, $header);
+        }
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, TRUE);
+        curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, FALSE);
+        if (!empty($postData)) {
+            curl_setopt($ch, CURLOPT_POST, TRUE);
+            curl_setopt($ch, CURLOPT_POSTFIELDS, is_array($postData) ? http_build_query($postData) : $postData);
+        }
+        $curlResponse = curl_exec($ch);
+        $curlErrno = curl_errno($ch);
+        if ($curlErrno) {
+            $curlError = curl_error($ch);
+            throw new Exception($curlError);
+        }
+        curl_close($ch);
+        return $curlResponse;
+    }
+    abstract function translate($text);
 }
 
-function wst_get_translate($char){
-	$charurl=urlencode($char);
-	$data = wst_get_html("http://api.search.live.com/xml.aspx?AppId=".APP_ID."&Sources=Translation&Translation.SourceLanguage=".SOURCE."&Translation.TargetLanguage=".TARGET."&Query=".$charurl);
-	preg_match('/<tra:TranslatedTerm>(.*?)<\/tra:TranslatedTerm>/',$data,$translate);
-	$txt = trim($translate[1]);
-	return $txt;
+class BingTranslator extends Translate
+{
+    private $_clientID = CLIENTID;
+    private $_clientSecret = CLIENTSECRET;
+    private $_fromLanguage = SOURCE;
+    private $_toLanguage = TARGET;
+
+    private $_authUrl = "https://datamarket.accesscontrol.windows.net/v2/OAuth2-13/";
+    private $_scopeUrl = "http://api.microsofttranslator.com";
+    private $_grantType = "client_credentials";
+    private $_via = 0;
+
+    function __construct($via = 0){
+        $this->_via = empty($via) ? 0 : $via;
+    }
+    public function setLocal($loc){
+        $this->_fromLanguage = $loc;
+    }
+    public function setToLanguange($to){
+        $this->_toLanguage = $to;
+    }
+    public function translate($inputStr){
+		return $this->_viaApi($inputStr);
+    }
+
+    private function _getTokens(){
+        try{
+            $postData = array(
+                'grant_type' => $this->_grantType,
+                'scope' => $this->_scopeUrl,
+                'client_id' => $this->_clientID,
+                'client_secret' => $this->_clientSecret
+            );
+            $header = array('User-Agent: Mozilla/5.0 (Windows NT 5.1; rv:6.0.1) Gecko/20100101 Firefox/6.0.1');
+            $response = $this->curlRequest($this->_authUrl, $header, $postData);
+            $jsonObj = json_decode($response);
+            return $jsonObj->access_token;
+        }
+		catch(Exception $e){
+            echo "Exception-" . $e->getMessage();
+        }
+    }
+
+    private function _viaApi($inputStr){
+        $params = "appId=&text=" . urlencode($inputStr) . "&to=" . $this->_toLanguage . "&from=" . $this->_fromLanguage;
+        $translateUrl = "http://api.microsofttranslator.com/v2/Http.svc/Translate?$params";
+        $accessToken = $this->_getTokens();
+        $authHeader = "Authorization: Bearer " . $accessToken;
+        $header = array($authHeader, "Content-Type: text/xml");
+        $curlResponse = $this->curlRequest($translateUrl, $header);
+		
+        $xmlObj = simplexml_load_string($curlResponse);
+        $translatedStr = '';
+        foreach ((array)$xmlObj[0] as $val) {
+            $translatedStr = $val;
+        }
+
+        return $translatedStr;
+    }
+
 }
+
 function wp_slug_translate($postID){
 	global $wpdb;
 	$tableposts = $wpdb->posts ;
@@ -57,8 +124,9 @@ function wp_slug_translate($postID){
 			if( !substr_count($post_name,'%') )
 				return true;
 		}
-
-		$wst_title = sanitize_title( wst_get_translate($post_title) );
+		
+		$bing= new BingTranslator();
+		$wst_title = sanitize_title( $bing->translate($post_title) );
 		if( strlen($wst_title) < 2 ) {
 			$wst_title = $postID;
 		}
@@ -72,16 +140,18 @@ add_action('edit_post', 'wp_slug_translate');
 if(is_admin()){require_once('wp_slug_translate_admin.php');}
 
 function wp_slug_translate_activate(){
+	add_option('wp_slug_translate_clientid','wp-slug-translate');
+	add_option('wp_slug_translate_clientsecret','pK2JdEwF/Janzz2O36Lgkq0QcDkc4Fuw0HqJvWVIFLQ=');
 	add_option('wp_slug_translate_language','zh-CHS');
-	add_option('wp_slug_translate_appid','4C8F1B4E6F087A90BDDE6DC1322F0F973EFCC32F');
 	add_option('wp_slug_translate_deactivate','');
 }
 register_activation_hook( __FILE__, 'wp_slug_translate_activate' );
 
 if(get_option("wp_slug_translate_deactivate")=='yes'){
 	function wp_slug_translate_deactivate(){
+		delete_option('wp_slug_translate_clientid');
+		delete_option('wp_slug_translate_clientsecret');
 		delete_option('wp_slug_translate_language');
-		delete_option('wp_slug_translate_appid');
 		delete_option('wp_slug_translate_deactivate');
 	}
 	register_deactivation_hook( __FILE__, 'wp_slug_translate_deactivate' );

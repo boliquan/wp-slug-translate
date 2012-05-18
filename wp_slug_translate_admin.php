@@ -15,13 +15,18 @@ function wp_slug_translate_page(){
 <table class="form-table">
 	<tr valign="top">
 		<th scope="row">
-			<?php _e('Bing APP_ID','WP-Slug-Translate'); ?>
+			Windows Azure Application<br />
+			<a href="https://datamarket.azure.com/developer/applications/register" target="_blank">Register</a> | <a href="https://datamarket.azure.com/dataset/1899a118-d202-492c-aa16-ba21c33c06cb" target="_blank">Subscribe</a>
 		</th>
 		<td>
 			<label>
-				<input type="text" name="wp_slug_translate_appid" value="<?php echo get_option('wp_slug_translate_appid'); ?>" style="width:300px;height:24px;" />
+				<input type="text" name="wp_slug_translate_clientid" value="<?php echo get_option('wp_slug_translate_clientid'); ?>" style="width:300px;height:24px;" />
+				<code>ClientID</code>
+			</label><br />
+			<label>
+				<input type="text" name="wp_slug_translate_clientsecret" value="<?php echo get_option('wp_slug_translate_clientsecret'); ?>" style="width:300px;height:24px;" />
+				<code>ClientSecret</code>
 			</label>
-			<a href="http://www.bing.com/developers/appids.aspx" target="_blank"><?php _e('Apply for your own app id (Recommend)','WP-Slug-Translate'); ?></a>
 		</td>
 	</tr>
 	<tr valign="top">
@@ -89,7 +94,7 @@ function wp_slug_translate_page(){
 </table>
 
 <input type="hidden" name="action" value="update" />
-<input type="hidden" name="page_options" value="wp_slug_translate_appid,wp_slug_translate_language,wp_slug_translate_deactivate" />
+<input type="hidden" name="page_options" value="wp_slug_translate_clientid,wp_slug_translate_clientsecret,wp_slug_translate_language,wp_slug_translate_deactivate" />
 
 <p class="submit">
 <input type="submit" class="button-primary" name="Submit" value="<?php _e('Save Changes'); ?>" />
@@ -107,7 +112,7 @@ function wp_slug_translate_page(){
 <h2>Description</h2>
 <p>
  1. WP Slug Translate can translate the post slug into english. It will take the post ID as slug when translation failure.<br />
- 2. "APP_ID": Input your own Bing APP_ID, you can also use the default one<br />
+ 2. "Windows Azure Application": Input your own ClientID and ClientSecret, you can also use the default one<br />
  3. "Source Language": Choose your language, 38 languages supported<br />
  4. When you have written an article, click "Publish", then the post slug will be automatically translated into English<br />
  5. For more information, please visit: <a href="http://boliquan.com/wp-slug-translate/" target="_blank">WP Slug Translate</a> | <a href="http://wordpress.org/extend/plugins/wp-slug-translate/" target="_blank">Usage</a> | <a href="http://wordpress.org/extend/plugins/wp-slug-translate/" target="_blank">Download</a><br />
