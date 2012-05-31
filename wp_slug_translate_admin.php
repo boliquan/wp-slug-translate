@@ -3,6 +3,11 @@ function wp_slug_translate_admin(){
 	add_options_page('WP Slug Translate Options', 'WP Slug Translate','manage_options', __FILE__, 'wp_slug_translate_page');
 }
 function wp_slug_translate_page(){
+	if(isset($_POST['action'])){
+		if($_POST['action']=='reset'){
+			wp_slug_translate_activate();
+		}
+	}
 ?>
 <div class="wrap">
 	
@@ -102,6 +107,11 @@ function wp_slug_translate_page(){
 
 </form>
 
+<form action="" method="post">
+	<input type="hidden" name="action" value="reset" />
+	<input type="submit" class="button" value="<?php _e('Reset'); ?>" />
+</form>
+
 <br />
 <?php $fanyi_url = plugins_url('/img/fanyi.png', __FILE__);?>
 <?php $donate_url = plugins_url('/img/paypal_32_32.jpg', __FILE__);?>
@@ -113,7 +123,7 @@ function wp_slug_translate_page(){
 <p>
  1. WP Slug Translate can translate the post slug into english. It will take the post ID as slug when translation failure.<br />
  2. "Windows Azure Application": Input your own ClientID and ClientSecret, you can also use the default one<br />
- 3. "Source Language": Choose your language, 38 languages supported<br />
+ 3. "Source Language": Choose your language, 38 languages supported, powered by Bing Translator API<br />
  4. When you have written an article, click "Publish", then the post slug will be automatically translated into English<br />
  5. For more information, please visit: <a href="http://boliquan.com/wp-slug-translate/" target="_blank">WP Slug Translate</a> | <a href="http://wordpress.org/extend/plugins/wp-slug-translate/" target="_blank">Usage</a> | <a href="http://wordpress.org/extend/plugins/wp-slug-translate/" target="_blank">Download</a><br />
  6. You can submit translations in: <a href="http://boliquan.com/wp-slug-translate/" target="_blank">http://boliquan.com/wp-slug-translate/</a>

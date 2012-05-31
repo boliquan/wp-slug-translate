@@ -1,11 +1,11 @@
 === WP Slug Translate ===
 Contributors: boliquan
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=SKA6TPPWSATKG&item_name=BoLiQuan&no_shipping=0&no_note=1&tax=0&currency_code=USD&lc=CA&bn=PP%2dDonationsBF&charset=UTF%2d8
-Tags: wp slug translate,wp slug,slug,translate,bing,post name,post id,post title,post slug,translator,translation,permalink,english,seo,url,title,auto slug,translate title,translate permalink,post,cos slug translator,slug translator,microsoft translator,api
+Tags: wp slug translate,wp slug translator,wp slug,slug,translate,bing,bing translator,post name,post id,post title,post slug,translator,translation,permalink,english,seo,url,title,auto slug,translate title,translate permalink,post,cos slug translator,slug translator,microsoft translator,api
 License: GPLv2
 Requires at least: 2.7
 Tested up to: 3.3.2
-Stable tag: 1.8.0
+Stable tag: 1.8.1
 
 WP Slug Translate can translate the post slug into English. It will take the post ID as slug when translation failure.
 
@@ -28,7 +28,7 @@ It can delete its own options if you need to deactivate it, so it is a green plu
 2. Activate the plugin through the "Plugins" menu in WordPress
 3. "Settings"->"WP Slug Translate"
 4. "Windows Azure Application": Input your own ClientID and ClientSecret, you can also use the default one
-5. "Source Language": Choose your language, 38 languages supported
+5. "Source Language": Choose your language, 38 languages supported, powered by Bing Translator API
 6. When you have written an article, click "Publish", then the post slug will be automatically translated into English
 
 = More Information =
@@ -53,11 +53,15 @@ Related Links:
 2. Activate the plugin through the "Plugins" menu in WordPress
 3. "Settings"->"WP Slug Translate"
 4. "Windows Azure Application": Input your own ClientID and ClientSecret, you can also use the default one
-5. "Source Language": Choose your language, 38 languages supported
+5. "Source Language": Choose your language, 38 languages supported, powered by Bing Translator API
 6. When you have written an article, click "Publish", then the post slug will be automatically translated into English
 
 
 == Changelog ==
+
+= 1.8.1 =
+
+* Add "Reset" button
 
 = 1.8.0 =
 
