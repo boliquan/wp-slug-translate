@@ -3,7 +3,7 @@
 Plugin Name: WP Slug Translate
 Plugin URI: http://boliquan.com/wp-slug-translate/
 Description: WP Slug Translate can translate the post slug into English. It will take the post ID as slug when translation failure.
-Version: 1.8.1
+Version: 1.8.2
 Author: BoLiQuan
 Author URI: http://boliquan.com/
 Text Domain: WP-Slug-Translate
@@ -24,33 +24,27 @@ function load_wp_slug_translate_lang(){
 }
 add_filter('init','load_wp_slug_translate_lang');
 
-abstract class Translate 
+class HttpRequest
 {
     function curlRequest($url, $header = array(), $postData = ''){
         $ch = curl_init();
         curl_setopt($ch, CURLOPT_URL, $url);
-        if (!empty($header)) {
+        if(!empty($header)){
             curl_setopt($ch, CURLOPT_HTTPHEADER, $header);
         }
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, TRUE);
         curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, FALSE);
-        if (!empty($postData)) {
+        if(!empty($postData)){
             curl_setopt($ch, CURLOPT_POST, TRUE);
             curl_setopt($ch, CURLOPT_POSTFIELDS, is_array($postData) ? http_build_query($postData) : $postData);
         }
         $curlResponse = curl_exec($ch);
-        $curlErrno = curl_errno($ch);
-        if ($curlErrno) {
-            $curlError = curl_error($ch);
-            throw new Exception($curlError);
-        }
         curl_close($ch);
         return $curlResponse;
     }
-    abstract function translate($text);
 }
 
-class BingTranslator extends Translate
+class BingTranslator extends HttpRequest
 {
     private $_clientID = CLIENTID;
     private $_clientSecret = CLIENTSECRET;
@@ -60,20 +54,6 @@ class BingTranslator extends Translate
     private $_authUrl = "https://datamarket.accesscontrol.windows.net/v2/OAuth2-13/";
     private $_scopeUrl = "http://api.microsofttranslator.com";
     private $_grantType = "client_credentials";
-    private $_via = 0;
-
-    function __construct($via = 0){
-        $this->_via = empty($via) ? 0 : $via;
-    }
-    public function setLocal($loc){
-        $this->_fromLanguage = $loc;
-    }
-    public function setToLanguange($to){
-        $this->_toLanguage = $to;
-    }
-    public function translate($inputStr){
-		return $this->_viaApi($inputStr);
-    }
 
     private function _getTokens(){
         try{
@@ -93,8 +73,8 @@ class BingTranslator extends Translate
         }
     }
 
-    private function _viaApi($inputStr){
-        $params = "appId=&text=" . urlencode($inputStr) . "&to=" . $this->_toLanguage . "&from=" . $this->_fromLanguage;
+    function translate($inputStr){
+        $params = "text=" . rawurlencode($inputStr) . "&from=" . $this->_fromLanguage . "&to=" . $this->_toLanguage;
         $translateUrl = "http://api.microsofttranslator.com/v2/Http.svc/Translate?$params";
         $accessToken = $this->_getTokens();
         $authHeader = "Authorization: Bearer " . $accessToken;
@@ -103,7 +83,7 @@ class BingTranslator extends Translate
 		
         $xmlObj = simplexml_load_string($curlResponse);
         $translatedStr = '';
-        foreach ((array)$xmlObj[0] as $val) {
+        foreach((array)$xmlObj[0] as $val){
             $translatedStr = $val;
         }
 
@@ -120,11 +100,18 @@ function wp_slug_translate($postID){
 		$post_title = $res[0]->post_title;
 		$post_name = $res[0]->post_name;
 
-		if( sanitize_title($post_title) != $post_name ) {
-			if( !substr_count($post_name,'%') )
-				return true;
+		if( !substr_count($post_name,'%') ){
+			if(substr_count($post_name,'_')){
+				$wst_post_name = str_replace('_','-',$post_name);
+				$sql ="UPDATE ".$tableposts." SET `post_name` = '".$wst_post_name."' WHERE ID =$postID;";
+				$res = $wpdb->query($sql);
+			}
+			return true;
 		}
 		
+		if(substr_count($post_title,'_')){
+			$post_title = str_replace('_',' ',$post_title);
+		}
 		$bing= new BingTranslator();
 		$wst_title = sanitize_title( $bing->translate($post_title) );
 		if( strlen($wst_title) < 2 ) {

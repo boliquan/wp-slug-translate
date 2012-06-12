@@ -5,7 +5,7 @@ Tags: wp slug translate,wp slug translator,wp slug,slug,translate,bing,bing tran
 License: GPLv2
 Requires at least: 2.7
 Tested up to: 3.3.2
-Stable tag: 1.8.1
+Stable tag: 1.8.2
 
 WP Slug Translate can translate the post slug into English. It will take the post ID as slug when translation failure.
 
@@ -58,6 +58,11 @@ Related Links:
 
 
 == Changelog ==
+
+= 1.8.2 =
+
+* Replace underscore with hyphen
+* Saving time
 
 = 1.8.1 =
 
