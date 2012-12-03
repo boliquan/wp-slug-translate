@@ -146,6 +146,7 @@ If you find my work useful and you want to encourage the development of more fre
 <h2>Related Links</h2>
 <ul style="margin:0 18px;">
 <li><a href="http://boliquan.com/wp-slug-translate/" target="_blank">WP-Slug-Translate FAQ</a> | <a href="http://boliquan.com/wp-slug-translate/" target="_blank">Submit Translations</a> | <a href="http://wordpress.org/extend/plugins/wp-slug-translate/" target="_blank">Download</a></li>
+<li><a href="http://boliquan.com/wp-smtp/" target="_blank">WP SMTP</a> | <a href="http://wordpress.org/extend/plugins/wp-smtp/" target="_blank">Download</a></li>
 <li><a href="http://boliquan.com/wp-anti-spam/" target="_blank">WP Anti Spam</a> | <a href="http://wordpress.org/extend/plugins/wp-anti-spam/" target="_blank">Download</a></li>
 <li><a href="http://boliquan.com/wp-code-highlight/" target="_blank">WP Code Highlight</a> | <a href="http://wordpress.org/extend/plugins/wp-code-highlight/" target="_blank">Download</a></li>
 <li><a href="http://boliquan.com/yg-share/" target="_blank">YG Share</a> | <a href="http://wordpress.org/extend/plugins/yg-share/" target="_blank">Download</a></li>

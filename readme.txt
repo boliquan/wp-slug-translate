@@ -4,8 +4,8 @@ Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=SKA6T
 Tags: wp slug translate,wp slug translator,wp slug,slug,translate,bing,bing translator,post name,post id,post title,post slug,translator,translation,permalink,english,seo,url,title,auto slug,translate title,translate permalink,post,cos slug translator,slug translator,microsoft translator,api
 License: GPLv2
 Requires at least: 2.7
-Tested up to: 3.3.2
-Stable tag: 1.8.2
+Tested up to: 3.4.2
+Stable tag: 1.8.3
 
 WP Slug Translate can translate the post slug into English. It will take the post ID as slug when translation failure.
 
@@ -26,18 +26,19 @@ It can delete its own options if you need to deactivate it, so it is a green plu
 
 1. Download and extract `wp-slug-translate.zip` to `wp-content/plugins/`
 2. Activate the plugin through the "Plugins" menu in WordPress
-3. "Settings"->"WP Slug Translate"
+3. "Dashboard"->"Settings"->"WP Slug Translate"
 4. "Windows Azure Application": Input your own ClientID and ClientSecret, you can also use the default one
 5. "Source Language": Choose your language, 38 languages supported, powered by Bing Translator API
 6. When you have written an article, click "Publish", then the post slug will be automatically translated into English
 
 = More Information =
 
-For more information of this plugin, please visit: [Homepage](http://boliquan.com/wp-slug-translate/ "WP Slug Translate").
+For more information of this plugin, please visit: [Plugin Homepage](http://boliquan.com/wp-slug-translate/ "WP Slug Translate").
 
 Related Links:
 
-* <a href="http://boliquan.com/wp-slug-translate/">WP Slug Translate</a> | <a href="http://wordpress.org/extend/plugins/wp-slug-translate/">Download</a>
+* <a href="http://boliquan.com/wp-slug-translate/">WP Slug Translate (FAQ)</a> | <a href="http://wordpress.org/extend/plugins/wp-slug-translate/">Download</a>
+* <a href="http://boliquan.com/wp-smtp/">WP SMTP</a> | <a href="http://wordpress.org/extend/plugins/wp-smtp/">Download</a>
 * <a href="http://boliquan.com/wp-code-highlight/">WP Code Highlight</a> | <a href="http://wordpress.org/extend/plugins/wp-code-highlight/">Download</a>
 * <a href="http://boliquan.com/wp-anti-spam/">WP Anti Spam</a> | <a href="http://wordpress.org/extend/plugins/wp-anti-spam/">Download</a>
 * <a href="http://boliquan.com/yg-share/">YG Share</a> | <a href="http://wordpress.org/extend/plugins/yg-share/">Download</a>
@@ -51,13 +52,18 @@ Related Links:
 
 1. Download and extract `wp-slug-translate.zip` to `wp-content/plugins/`
 2. Activate the plugin through the "Plugins" menu in WordPress
-3. "Settings"->"WP Slug Translate"
+3. "Dashboard"->"Settings"->"WP Slug Translate"
 4. "Windows Azure Application": Input your own ClientID and ClientSecret, you can also use the default one
 5. "Source Language": Choose your language, 38 languages supported, powered by Bing Translator API
 6. When you have written an article, click "Publish", then the post slug will be automatically translated into English
 
 
 == Changelog ==
+
+= 1.8.3 =
+
+* Add settings link
+* Some optimization
 
 = 1.8.2 =
 

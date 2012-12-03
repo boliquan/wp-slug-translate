@@ -3,7 +3,7 @@
 Plugin Name: WP Slug Translate
 Plugin URI: http://boliquan.com/wp-slug-translate/
 Description: WP Slug Translate can translate the post slug into English. It will take the post ID as slug when translation failure.
-Version: 1.8.2
+Version: 1.8.3
 Author: BoLiQuan
 Author URI: http://boliquan.com/
 Text Domain: WP-Slug-Translate
@@ -100,7 +100,7 @@ function wp_slug_translate($postID){
 		$post_title = $res[0]->post_title;
 		$post_name = $res[0]->post_name;
 
-		if( !substr_count($post_name,'%') ){
+		if( !substr_count($post_name,'%') && !is_numeric($post_name) ){
 			if(substr_count($post_name,'_')){
 				$wst_post_name = str_replace('_','-',$post_name);
 				$sql ="UPDATE ".$tableposts." SET `post_name` = '".$wst_post_name."' WHERE ID =$postID;";
@@ -124,8 +124,6 @@ function wp_slug_translate($postID){
 add_action('publish_post', 'wp_slug_translate');
 add_action('edit_post', 'wp_slug_translate');
 
-if(is_admin()){require_once('wp_slug_translate_admin.php');}
-
 function wp_slug_translate_activate(){
 	update_option('wp_slug_translate_clientid','wp-slug-translate');
 	update_option('wp_slug_translate_clientsecret','pK2JdEwF/Janzz2O36Lgkq0QcDkc4Fuw0HqJvWVIFLQ=');
@@ -143,5 +141,16 @@ if(get_option("wp_slug_translate_deactivate")=='yes'){
 	}
 	register_deactivation_hook( __FILE__, 'wp_slug_translate_deactivate' );
 }
+
+function wp_slug_translate_settings_link($action_links,$plugin_file){
+	if($plugin_file==plugin_basename(__FILE__)){
+		$wst_settings_link = '<a href="options-general.php?page=' . dirname(plugin_basename(__FILE__)) . '/wp_slug_translate_admin.php">' . __("Settings") . '</a>';
+		array_unshift($action_links,$wst_settings_link);
+	}
+	return $action_links;
+}
+add_filter('plugin_action_links','wp_slug_translate_settings_link',10,4); 
+
+if(is_admin()){require_once('wp_slug_translate_admin.php');}
 
 ?>
