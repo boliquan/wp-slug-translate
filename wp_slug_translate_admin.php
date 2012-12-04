@@ -3,9 +3,16 @@ function wp_slug_translate_admin(){
 	add_options_page('WP Slug Translate Options', 'WP Slug Translate','manage_options', __FILE__, 'wp_slug_translate_page');
 }
 function wp_slug_translate_page(){
-	if(isset($_POST['action'])){
-		if($_POST['action']=='reset'){
-			wp_slug_translate_activate();
+	function wp_slug_translate_reset(){
+		update_option('wp_slug_translate_clientid','wp-slug-translate');
+		update_option('wp_slug_translate_clientsecret','pK2JdEwF/Janzz2O36Lgkq0QcDkc4Fuw0HqJvWVIFLQ=');
+		update_option('wp_slug_translate_language','zh-CHS');
+		update_option('wp_slug_translate_deactivate','');
+	}
+	if(isset($_POST['wp_slug_translate_reset'])){
+		if($_POST['wp_slug_translate_reset']=='reset'){
+			wp_slug_translate_reset();
+			echo '<div id="message" class="updated fade"><p><strong>' . __("Default settings restored!","WP-Slug-Translate") . '</strong></p></div>';
 		}
 	}
 ?>
@@ -108,7 +115,7 @@ function wp_slug_translate_page(){
 </form>
 
 <form action="" method="post">
-	<input type="hidden" name="action" value="reset" />
+	<input type="hidden" name="wp_slug_translate_reset" value="reset" />
 	<input type="submit" class="button" value="<?php _e('Reset'); ?>" />
 </form>
 

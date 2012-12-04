@@ -125,10 +125,10 @@ add_action('publish_post', 'wp_slug_translate');
 add_action('edit_post', 'wp_slug_translate');
 
 function wp_slug_translate_activate(){
-	update_option('wp_slug_translate_clientid','wp-slug-translate');
-	update_option('wp_slug_translate_clientsecret','pK2JdEwF/Janzz2O36Lgkq0QcDkc4Fuw0HqJvWVIFLQ=');
-	update_option('wp_slug_translate_language','zh-CHS');
-	update_option('wp_slug_translate_deactivate','');
+	add_option('wp_slug_translate_clientid','wp-slug-translate');
+	add_option('wp_slug_translate_clientsecret','pK2JdEwF/Janzz2O36Lgkq0QcDkc4Fuw0HqJvWVIFLQ=');
+	add_option('wp_slug_translate_language','zh-CHS');
+	add_option('wp_slug_translate_deactivate','');
 }
 register_activation_hook( __FILE__, 'wp_slug_translate_activate' );
 
