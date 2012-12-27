@@ -3,7 +3,7 @@
 Plugin Name: WP Slug Translate
 Plugin URI: http://boliquan.com/wp-slug-translate/
 Description: WP Slug Translate can translate the post slug into English. It will take the post ID as slug when translation failure.
-Version: 1.8.3
+Version: 1.8.5
 Author: BoLiQuan
 Author URI: http://boliquan.com/
 Text Domain: WP-Slug-Translate
@@ -24,7 +24,7 @@ function load_wp_slug_translate_lang(){
 }
 add_filter('init','load_wp_slug_translate_lang');
 
-class HttpRequest
+class WstHttpRequest
 {
     function curlRequest($url, $header = array(), $postData = ''){
         $ch = curl_init();
@@ -44,7 +44,7 @@ class HttpRequest
     }
 }
 
-class BingTranslator extends HttpRequest
+class WstBingTranslator extends WstHttpRequest
 {
     private $_clientID = CLIENTID;
     private $_clientSecret = CLIENTSECRET;
@@ -94,7 +94,7 @@ class BingTranslator extends HttpRequest
 
 function wp_slug_translate($postID){
 	global $wpdb;
-	$tableposts = $wpdb->posts ;
+	$tableposts = $wpdb->posts;
 		$sql = "SELECT post_title,post_name FROM $tableposts WHERE ID=$postID";
 		$res = $wpdb->get_results($sql);	
 		$post_title = $res[0]->post_title;
@@ -112,8 +112,8 @@ function wp_slug_translate($postID){
 		if(substr_count($post_title,'_')){
 			$post_title = str_replace('_',' ',$post_title);
 		}
-		$bing= new BingTranslator();
-		$wst_title = sanitize_title( $bing->translate($post_title) );
+		$wst_bing= new WstBingTranslator();
+		$wst_title = sanitize_title( $wst_bing->translate($post_title) );
 		if( strlen($wst_title) < 2 ) {
 			$wst_title = $postID;
 		}

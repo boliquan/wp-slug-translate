@@ -4,8 +4,8 @@ Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=SKA6T
 Tags: wp slug translate,wp slug translator,wp slug,slug,translate,bing,bing translator,post name,post id,post title,post slug,translator,translation,permalink,english,seo,url,title,auto slug,translate title,translate permalink,post,cos slug translator,slug translator,microsoft translator,api
 License: GPLv2
 Requires at least: 2.7
-Tested up to: 3.4.2
-Stable tag: 1.8.3
+Tested up to: 3.5
+Stable tag: 1.8.5
 
 WP Slug Translate can translate the post slug into English. It will take the post ID as slug when translation failure.
 
@@ -38,6 +38,7 @@ For more information of this plugin, please visit: [Plugin Homepage](http://boli
 Related Links:
 
 * <a href="http://boliquan.com/wp-slug-translate/">WP Slug Translate (FAQ)</a> | <a href="http://wordpress.org/extend/plugins/wp-slug-translate/">Download</a>
+* <a href="http://boliquan.com/wp-clean-up/">WP Clean Up</a> | <a href="http://wordpress.org/extend/plugins/wp-clean-up/">Download</a>
 * <a href="http://boliquan.com/wp-smtp/">WP SMTP</a> | <a href="http://wordpress.org/extend/plugins/wp-smtp/">Download</a>
 * <a href="http://boliquan.com/wp-code-highlight/">WP Code Highlight</a> | <a href="http://wordpress.org/extend/plugins/wp-code-highlight/">Download</a>
 * <a href="http://boliquan.com/wp-anti-spam/">WP Anti Spam</a> | <a href="http://wordpress.org/extend/plugins/wp-anti-spam/">Download</a>
@@ -59,6 +60,11 @@ Related Links:
 
 
 == Changelog ==
+
+= 1.8.5 =
+
+* Add the tutorial of Windows Azure Application
+* Some optimization
 
 = 1.8.3 =
 
