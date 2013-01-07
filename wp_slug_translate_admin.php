@@ -1,6 +1,13 @@
 <?php
 function wp_slug_translate_admin(){
 	add_options_page('WP Slug Translate Options', 'WP Slug Translate','manage_options', __FILE__, 'wp_slug_translate_page');
+	add_action('admin_init','wp_slug_translate_register');
+}
+function wp_slug_translate_register(){
+	register_setting('wst-settings','wp_slug_translate_clientid');
+	register_setting('wst-settings','wp_slug_translate_clientsecret');
+	register_setting('wst-settings','wp_slug_translate_language');
+	register_setting('wst-settings','wp_slug_translate_deactivate');
 }
 function wp_slug_translate_page(){
 	function wp_slug_translate_reset(){
@@ -22,7 +29,7 @@ function wp_slug_translate_page(){
 <h2>WP Slug Translate</h2>
 
 <form action="options.php" method="post" enctype="multipart/form-data" name="wp_slug_translate_form">
-<?php wp_nonce_field('update-options'); ?>
+<?php settings_fields('wst-settings'); ?>
 
 <table class="form-table">
 	<tr valign="top">
@@ -105,9 +112,6 @@ function wp_slug_translate_page(){
 	</tr>
 </table>
 
-<input type="hidden" name="action" value="update" />
-<input type="hidden" name="page_options" value="wp_slug_translate_clientid,wp_slug_translate_clientsecret,wp_slug_translate_language,wp_slug_translate_deactivate" />
-
 <p class="submit">
 <input type="submit" class="button-primary" name="Submit" value="<?php _e('Save Changes'); ?>" />
 </p>
@@ -132,8 +136,7 @@ function wp_slug_translate_page(){
  2. "Windows Azure Application": Input your own ClientID and ClientSecret, you can also use the default one<br />
  3. "Source Language": Choose your language, 38 languages supported, powered by Bing Translator API<br />
  4. When you have written an article, click "Publish", then the post slug will be automatically translated into English<br />
- 5. For more information, please visit: <a href="http://boliquan.com/wp-slug-translate/" target="_blank">WP Slug Translate</a> | <a href="http://wordpress.org/extend/plugins/wp-slug-translate/" target="_blank">Usage</a> | <a href="http://wordpress.org/extend/plugins/wp-slug-translate/" target="_blank">Download</a><br />
- 6. You can submit translations in: <a href="http://boliquan.com/wp-slug-translate/" target="_blank">http://boliquan.com/wp-slug-translate/</a>
+ 5. For more information, please visit: <a href="http://boliquan.com/wp-slug-translate/" target="_blank">WP Slug Translate</a> | <a href="http://wordpress.org/extend/plugins/wp-slug-translate/" target="_blank">Usage</a> | <a href="http://wordpress.org/extend/plugins/wp-slug-translate/" target="_blank">Download</a>
 </p>
 
 <div class="icon32"><img src="<?php echo $donate_url; ?>" alt="Donate" /></div>

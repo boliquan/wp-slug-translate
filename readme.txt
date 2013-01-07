@@ -64,6 +64,7 @@ Related Links:
 = 1.8.5 =
 
 * Add the tutorial of Windows Azure Application
+* Register Setting
 * Some optimization
 
 = 1.8.3 =
