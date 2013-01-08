@@ -94,18 +94,18 @@ class WstBingTranslator extends WstHttpRequest
 
 }
 
-function wp_slug_translate($postID){
+function wp_slug_translate($postid){
 	global $wpdb;
-	$sql = "SELECT post_title,post_name FROM $wpdb->posts WHERE ID=$postID";
-	$res = $wpdb->get_results($sql);	
-	$post_title = $res[0]->post_title;
-	$post_name = $res[0]->post_name;
+	$sql = "SELECT post_title,post_name FROM $wpdb->posts WHERE ID = '$postid'";
+	$results = $wpdb->get_results($sql);	
+	$post_title = $results[0]->post_title;
+	$post_name = $results[0]->post_name;
 
 	if( !substr_count($post_name,'%') && !is_numeric($post_name) ){
 		if(substr_count($post_name,'_')){
 			$wst_post_name = str_replace('_','-',$post_name);
-			$sql ="UPDATE ".$wpdb->posts." SET `post_name` = '".$wst_post_name."' WHERE ID=$postID";
-			$res = $wpdb->query($sql);
+			$sql = "UPDATE $wpdb->posts SET post_name = '$wst_post_name' WHERE ID = '$postid'";
+			$wpdb->query($sql);
 		}
 		return true;
 	}
@@ -114,11 +114,11 @@ function wp_slug_translate($postID){
 	$wst_bing= new WstBingTranslator();
 	$wst_title = sanitize_title( $wst_bing->translate($post_title) );
 	if( strlen($wst_title) < 2 ){
-		$wst_title = $postID;
+		$wst_title = $postid;
 	}
 		
-	$sql ="UPDATE ".$wpdb->posts." SET `post_name` = '".$wst_title."' WHERE ID=$postID";		
-	$res = $wpdb->query($sql);
+	$sql = "UPDATE $wpdb->posts SET post_name = '$wst_title' WHERE ID = '$postid'";		
+	$wpdb->query($sql);
 }
 add_action('publish_post', 'wp_slug_translate', 1);
 add_action('edit_post', 'wp_slug_translate', 1);

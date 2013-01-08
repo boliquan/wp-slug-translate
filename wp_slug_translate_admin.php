@@ -35,7 +35,7 @@ function wp_slug_translate_page(){
 	<tr valign="top">
 		<th scope="row">
 			Windows Azure Application<br />
-			<a href="https://datamarket.azure.com/developer/applications/register" target="_blank">Register</a> | <a href="https://datamarket.azure.com/dataset/1899a118-d202-492c-aa16-ba21c33c06cb" target="_blank">Subscribe</a> | <a href="http://boliquan.com/windows-azure-application/" title="<?php _e('Apply for your own ClientID and ClientSecret','WP-Slug-Translate'); ?>" target="_blank"><?php _e('Tutorial','WP-Slug-Translate'); ?></a>
+			<span style="font-family:Tahoma,sans-serif;font-size:12px;"><a href="https://datamarket.azure.com/developer/applications/register" target="_blank">Register</a> | <a href="https://datamarket.azure.com/dataset/1899a118-d202-492c-aa16-ba21c33c06cb" target="_blank">Subscribe</a> | <a href="http://boliquan.com/windows-azure-application/" title="<?php _e('Apply for your own ClientID and ClientSecret','WP-Slug-Translate'); ?>" target="_blank"><?php _e('Tutorial','WP-Slug-Translate'); ?></a></span>
 		</th>
 		<td>
 			<label>
