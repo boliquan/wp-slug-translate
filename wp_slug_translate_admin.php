@@ -25,7 +25,7 @@ function wp_slug_translate_page(){
 ?>
 <div class="wrap">
 	
-<?php screen_icon();?>
+<?php screen_icon(); ?>
 <h2>WP Slug Translate</h2>
 
 <form action="options.php" method="post" enctype="multipart/form-data" name="wp_slug_translate_form">
