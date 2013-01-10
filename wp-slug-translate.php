@@ -26,7 +26,7 @@ add_filter('init','load_wp_slug_translate_lang');
 
 class WstHttpRequest
 {
-	function curlRequest($url, $header = array(), $postData = ''){
+	function curlRequest($url, $header = array(),$postData = ''){
 		$ch = curl_init();
 		curl_setopt($ch, CURLOPT_URL, $url);
 		if(!empty($header)){
