@@ -35,7 +35,7 @@ function wp_slug_translate_page(){
 	<tr valign="top">
 		<th scope="row">
 			Windows Azure Application<br />
-			<span style="font-family:Tahoma,sans-serif;font-size:12px;"><a href="https://datamarket.azure.com/developer/applications/register" target="_blank">Register</a> | <a href="https://datamarket.azure.com/dataset/1899a118-d202-492c-aa16-ba21c33c06cb" target="_blank">Subscribe</a> | <a href="http://boliquan.com/windows-azure-application/" title="<?php _e('Apply for your own ClientID and ClientSecret','WP-Slug-Translate'); ?>" target="_blank"><?php _e('Tutorial','WP-Slug-Translate'); ?></a></span>
+			<span style="font-family:Tahoma,sans-serif;font-size:12px;"><a href="https://datamarket.azure.com/dataset/1899a118-d202-492c-aa16-ba21c33c06cb" title="Step One" target="_blank">Subscribe</a> | <a href="https://datamarket.azure.com/developer/applications/register" title="Step Two" target="_blank">Register</a> | <a href="http://boliquan.com/windows-azure-application/" title="<?php _e('Apply for your own ClientID and ClientSecret','WP-Slug-Translate'); ?>" target="_blank"><?php _e('Tutorial','WP-Slug-Translate'); ?></a></span>
 		</th>
 		<td>
 			<label>
@@ -133,9 +133,9 @@ function wp_slug_translate_page(){
 <h2>Description</h2>
 <p>
  1. WP Slug Translate can translate the post slug into english. It will take the post ID as slug when translation failure.<br />
- 2. "Windows Azure Application": Input your own ClientID and ClientSecret, you can also use the default one<br />
- 3. "Source Language": Choose your language, 38 languages supported, powered by Bing Translator API<br />
- 4. When you have written an article, click "Publish", then the post slug will be automatically translated into English<br />
+ 2. "Windows Azure Application": Input your own ClientID and ClientSecret. Up to 2 million characters a month every account.<br />
+ 3. "Source Language": Choose your language, 38 languages supported, powered by Microsoft Translator API.<br />
+ 4. When you have written an article, click "Publish", then the post slug will be automatically translated into English.<br />
  5. For more information, please visit: <a href="http://boliquan.com/wp-slug-translate/" target="_blank">WP Slug Translate</a> | <a href="http://wordpress.org/extend/plugins/wp-slug-translate/" target="_blank">Usage</a> | <a href="http://wordpress.org/extend/plugins/wp-slug-translate/" target="_blank">Download</a>
 </p>
 

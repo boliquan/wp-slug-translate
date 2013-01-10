@@ -18,7 +18,7 @@ If you enter the slug manually, the result will depend on you have entered.
 WP Slug Translate won't overwrite an existing slug, you can try to re-translate by deleting the existing one.
 38 languages supported, powered by Microsoft Translator API.
 It can make your URL looks better and shoud be more SEO friendly.
-You can apply for your own ClientID and ClientSecret on the Windows Azure Marketplace, you can also use the default one.
+You can apply for your own ClientID and ClientSecret on the Windows Azure Marketplace, you can also use the default one, up to 2 million characters a month every account.
 You need to choose your language on the settings page.
 It can delete its own options if you need to deactivate it, so it is a green plugin!
 
@@ -27,8 +27,8 @@ It can delete its own options if you need to deactivate it, so it is a green plu
 1. Download and extract `wp-slug-translate.zip` to `wp-content/plugins/`
 2. Activate the plugin through the "Plugins" menu in WordPress
 3. "Dashboard"->"Settings"->"WP Slug Translate"
-4. "Windows Azure Application": Input your own ClientID and ClientSecret, you can also use the default one
-5. "Source Language": Choose your language, 38 languages supported, powered by Bing Translator API
+4. "Windows Azure Application": Input your own ClientID and ClientSecret, you can also use the default one, up to 2 million characters a month every account
+5. "Source Language": Choose your language, 38 languages supported, powered by Microsoft Translator API
 6. When you have written an article, click "Publish", then the post slug will be automatically translated into English
 
 = More Information =
@@ -54,8 +54,8 @@ Related Links:
 1. Download and extract `wp-slug-translate.zip` to `wp-content/plugins/`
 2. Activate the plugin through the "Plugins" menu in WordPress
 3. "Dashboard"->"Settings"->"WP Slug Translate"
-4. "Windows Azure Application": Input your own ClientID and ClientSecret, you can also use the default one
-5. "Source Language": Choose your language, 38 languages supported, powered by Bing Translator API
+4. "Windows Azure Application": Input your own ClientID and ClientSecret, you can also use the default one, up to 2 million characters a month every account
+5. "Source Language": Choose your language, 38 languages supported, powered by Microsoft Translator API
 6. When you have written an article, click "Publish", then the post slug will be automatically translated into English
 
 
