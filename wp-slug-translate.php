@@ -120,8 +120,9 @@ function wp_slug_translate($postid){
 	$sql = "UPDATE $wpdb->posts SET post_name = '$wst_title' WHERE ID = '$postid'";		
 	$wpdb->query($sql);
 }
-add_action('publish_post', 'wp_slug_translate', 1);
-add_action('edit_post', 'wp_slug_translate', 1);
+//add_action('publish_post', 'wp_slug_translate', 1);
+//add_action('edit_post', 'wp_slug_translate', 1);
+add_action('save_post', 'wp_slug_translate', 1);
 
 function wp_slug_translate_activate(){
 	add_option('wp_slug_translate_clientid','wp-slug-translate');
