@@ -4,8 +4,8 @@ Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=SKA6T
 Tags: wp slug translate,wp slug translator,wp slug,slug,translate,bing,bing translator,post name,post id,post title,post slug,translator,translation,permalink,english,seo,url,title,auto slug,translate title,translate permalink,post,cos slug translator,slug translator,microsoft translator,api
 License: GPLv2
 Requires at least: 2.7
-Tested up to: 3.5
-Stable tag: 1.8.5
+Tested up to: 3.6
+Stable tag: 1.8.6
 
 WP Slug Translate can translate the post slug into English. It will take the post ID as slug when translation failure.
 
@@ -29,7 +29,8 @@ It can delete its own options if you need to deactivate it, so it is a green plu
 3. "Dashboard"->"Settings"->"WP Slug Translate"
 4. "Windows Azure Application": Input your own ClientID and ClientSecret, you can also use the default one, up to 2 million characters a month every account
 5. "Source Language": Choose your language, 38 languages supported, powered by Microsoft Translator API
-6. When you have written an article, click "Publish", then the post slug will be automatically translated into English
+6. "Compatibility Mode": Run in compatibility mode, compatible with other plugins
+7. When you have written an article, click "Publish", then the post slug will be automatically translated into English
 
 = More Information =
 
@@ -56,10 +57,15 @@ Related Links:
 3. "Dashboard"->"Settings"->"WP Slug Translate"
 4. "Windows Azure Application": Input your own ClientID and ClientSecret, you can also use the default one, up to 2 million characters a month every account
 5. "Source Language": Choose your language, 38 languages supported, powered by Microsoft Translator API
-6. When you have written an article, click "Publish", then the post slug will be automatically translated into English
+6. "Compatibility Mode": Run in compatibility mode, compatible with other plugins
+7. When you have written an article, click "Publish", then the post slug will be automatically translated into English
 
 
 == Changelog ==
+
+= 1.8.6 =
+
+* Compatibility Mode
 
 = 1.8.5 =
 

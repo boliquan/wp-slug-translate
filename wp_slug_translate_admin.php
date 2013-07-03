@@ -7,6 +7,7 @@ function wp_slug_translate_register(){
 	register_setting('wst-settings','wp_slug_translate_clientid');
 	register_setting('wst-settings','wp_slug_translate_clientsecret');
 	register_setting('wst-settings','wp_slug_translate_language');
+	register_setting('wst-settings','wp_slug_translate_compatibility');
 	register_setting('wst-settings','wp_slug_translate_deactivate');
 }
 function wp_slug_translate_page(){
@@ -14,6 +15,7 @@ function wp_slug_translate_page(){
 		update_option('wp_slug_translate_clientid','wp-slug-translate');
 		update_option('wp_slug_translate_clientsecret','pK2JdEwF/Janzz2O36Lgkq0QcDkc4Fuw0HqJvWVIFLQ=');
 		update_option('wp_slug_translate_language','zh-CHS');
+		update_option('wp_slug_translate_compatibility','');
 		update_option('wp_slug_translate_deactivate','');
 	}
 	if(isset($_POST['wp_slug_translate_reset'])){
@@ -97,6 +99,17 @@ function wp_slug_translate_page(){
 			&nbsp;&nbsp;&nbsp;
 			To:
 			<code>en - English</code>
+		</td>
+	</tr>
+	<tr valign="top">
+		<th scope="row">
+			<?php _e('Compatibility Mode','WP-Slug-Translate'); ?>
+		</th>
+		<td>
+			<label>
+				<input type="checkbox" name="wp_slug_translate_compatibility" value="yes" <?php if(get_option("wp_slug_translate_compatibility")=='yes') echo 'checked="checked"'; ?> />
+				<?php _e('Run in compatibility mode.','WP-Slug-Translate'); ?>
+			</label>
 		</td>
 	</tr>
 	<tr valign="top">
