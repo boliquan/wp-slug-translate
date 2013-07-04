@@ -7,7 +7,7 @@ function wp_slug_translate_register(){
 	register_setting('wst-settings','wp_slug_translate_clientid');
 	register_setting('wst-settings','wp_slug_translate_clientsecret');
 	register_setting('wst-settings','wp_slug_translate_language');
-	register_setting('wst-settings','wp_slug_translate_compatibility');
+	register_setting('wst-settings','wp_slug_translate_secondmode');
 	register_setting('wst-settings','wp_slug_translate_deactivate');
 }
 function wp_slug_translate_page(){
@@ -15,7 +15,7 @@ function wp_slug_translate_page(){
 		update_option('wp_slug_translate_clientid','wp-slug-translate');
 		update_option('wp_slug_translate_clientsecret','pK2JdEwF/Janzz2O36Lgkq0QcDkc4Fuw0HqJvWVIFLQ=');
 		update_option('wp_slug_translate_language','zh-CHS');
-		update_option('wp_slug_translate_compatibility','');
+		update_option('wp_slug_translate_secondmode','');
 		update_option('wp_slug_translate_deactivate','');
 	}
 	if(isset($_POST['wp_slug_translate_reset'])){
@@ -103,12 +103,12 @@ function wp_slug_translate_page(){
 	</tr>
 	<tr valign="top">
 		<th scope="row">
-			<?php _e('Compatibility Mode','WP-Slug-Translate'); ?>
+			<?php _e('Second Mode','WP-Slug-Translate'); ?>
 		</th>
 		<td>
 			<label>
-				<input type="checkbox" name="wp_slug_translate_compatibility" value="yes" <?php if(get_option("wp_slug_translate_compatibility")=='yes') echo 'checked="checked"'; ?> />
-				<?php _e('Run in compatibility mode.','WP-Slug-Translate'); ?>
+				<input type="checkbox" name="wp_slug_translate_secondmode" value="yes" <?php if(get_option("wp_slug_translate_secondmode")=='yes') echo 'checked="checked"'; ?> />
+				<?php _e('Running in the second mode.','WP-Slug-Translate'); ?>
 			</label>
 		</td>
 	</tr>
@@ -148,8 +148,9 @@ function wp_slug_translate_page(){
  1. WP Slug Translate can translate the post slug into english. It will take the post ID as slug when translation failure.<br />
  2. "Windows Azure Application": Input your own ClientID and ClientSecret. Up to 2 million characters a month every account.<br />
  3. "Source Language": Choose your language, 38 languages supported, powered by Microsoft Translator API.<br />
- 4. When you have written an article, click "Publish", then the post slug will be automatically translated into English.<br />
- 5. For more information, please visit: <a href="http://boliquan.com/wp-slug-translate/" target="_blank">WP Slug Translate</a> | <a href="http://wordpress.org/extend/plugins/wp-slug-translate/" target="_blank">Usage</a> | <a href="http://wordpress.org/extend/plugins/wp-slug-translate/" target="_blank">Download</a>
+ 4. "Second Mode": Running in the second mode, compatible with some synchronous plugins.<br />
+ 5. When you have written an article, click "Publish", then the post slug will be automatically translated into English.<br />
+ 6. For more information, please visit: <a href="http://boliquan.com/wp-slug-translate/" target="_blank">WP Slug Translate</a> | <a href="http://wordpress.org/extend/plugins/wp-slug-translate/" target="_blank">Usage</a> | <a href="http://wordpress.org/extend/plugins/wp-slug-translate/" target="_blank">Download</a>
 </p>
 
 <div class="icon32"><img src="<?php echo $donate_url; ?>" alt="Donate" /></div>

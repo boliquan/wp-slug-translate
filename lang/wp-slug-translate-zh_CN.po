@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: WP Slug Translate\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-07-04 03:05+0800\n"
-"PO-Revision-Date: 2013-07-04 03:05+0800\n"
+"POT-Creation-Date: 2013-07-04 12:36+0800\n"
+"PO-Revision-Date: 2013-07-04 12:36+0800\n"
 "Last-Translator: 夜光 <berttung(#)gmail.com>\n"
 "Language-Team: 玻璃泉BoLiQuan.COM <berttung(#)gmail.com>\n"
 "MIME-Version: 1.0\n"
@@ -37,12 +37,12 @@ msgid "Source Language"
 msgstr "撰写博客使用的语言"
 
 #: D:\xampp\htdocs\wordpress\wp-content\plugins\wp-slug-translate/wp_slug_translate_admin.php:106
-msgid "Compatibility Mode"
-msgstr "以兼容模式运行"
+msgid "Second Mode"
+msgstr "第二工作模式"
 
 #: D:\xampp\htdocs\wordpress\wp-content\plugins\wp-slug-translate/wp_slug_translate_admin.php:111
-msgid "Run in compatibility mode."
-msgstr "在兼容模式下运行,兼容同步微博等插件."
+msgid "Running in the second mode."
+msgstr "以第二工作模式运行,兼容同步微博等插件,实时翻译别名."
 
 #: D:\xampp\htdocs\wordpress\wp-content\plugins\wp-slug-translate/wp_slug_translate_admin.php:117
 msgid "Delete Options"

@@ -29,7 +29,7 @@ It can delete its own options if you need to deactivate it, so it is a green plu
 3. "Dashboard"->"Settings"->"WP Slug Translate"
 4. "Windows Azure Application": Input your own ClientID and ClientSecret, you can also use the default one, up to 2 million characters a month every account
 5. "Source Language": Choose your language, 38 languages supported, powered by Microsoft Translator API
-6. "Compatibility Mode": Run in compatibility mode, compatible with other plugins
+6. "Second Mode": Running in the second mode, compatible with some synchronous plugins
 7. When you have written an article, click "Publish", then the post slug will be automatically translated into English
 
 = More Information =
@@ -57,7 +57,7 @@ Related Links:
 3. "Dashboard"->"Settings"->"WP Slug Translate"
 4. "Windows Azure Application": Input your own ClientID and ClientSecret, you can also use the default one, up to 2 million characters a month every account
 5. "Source Language": Choose your language, 38 languages supported, powered by Microsoft Translator API
-6. "Compatibility Mode": Run in compatibility mode, compatible with other plugins
+6. "Second Mode": Running in the second mode, compatible with some synchronous plugins
 7. When you have written an article, click "Publish", then the post slug will be automatically translated into English
 
 
@@ -65,7 +65,7 @@ Related Links:
 
 = 1.8.6 =
 
-* Compatibility Mode
+* Second Mode, compatible with some synchronous plugins
 
 = 1.8.5 =
 
