@@ -1,11 +1,11 @@
 === WP Slug Translate ===
 Contributors: boliquan
-Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=SKA6TPPWSATKG&item_name=BoLiQuan&no_shipping=0&no_note=1&tax=0&currency_code=USD&lc=CA&bn=PP%2dDonationsBF&charset=UTF%2d8
+Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=SCWY6NPFRR8EY
 Tags: wp slug translate,wp slug translator,wp slug,slug,translate,bing,bing translator,post name,post id,post title,post slug,translator,translation,permalink,english,seo,url,title,auto slug,translate title,translate permalink,post,cos slug translator,slug translator,microsoft translator,api
 License: GPLv2
 Requires at least: 2.7
-Tested up to: 3.6
-Stable tag: 1.8.6
+Tested up to: 3.9.1
+Stable tag: 1.8.7
 
 WP Slug Translate can translate the post slug into English. It will take the post ID as slug when translation failure.
 
@@ -38,12 +38,12 @@ For more information of this plugin, please visit: [Plugin Homepage](http://boli
 
 Related Links:
 
-* <a href="http://boliquan.com/wp-slug-translate/">WP Slug Translate (FAQ)</a> | <a href="http://wordpress.org/extend/plugins/wp-slug-translate/">Download</a>
-* <a href="http://boliquan.com/wp-clean-up/">WP Clean Up</a> | <a href="http://wordpress.org/extend/plugins/wp-clean-up/">Download</a>
-* <a href="http://boliquan.com/wp-smtp/">WP SMTP</a> | <a href="http://wordpress.org/extend/plugins/wp-smtp/">Download</a>
-* <a href="http://boliquan.com/wp-code-highlight/">WP Code Highlight</a> | <a href="http://wordpress.org/extend/plugins/wp-code-highlight/">Download</a>
-* <a href="http://boliquan.com/wp-anti-spam/">WP Anti Spam</a> | <a href="http://wordpress.org/extend/plugins/wp-anti-spam/">Download</a>
-* <a href="http://boliquan.com/yg-share/">YG Share</a> | <a href="http://wordpress.org/extend/plugins/yg-share/">Download</a>
+* <a href="http://boliquan.com/wp-slug-translate/">WP Slug Translate (FAQ)</a> | <a href="http://wordpress.org/plugins/wp-slug-translate/">Download</a>
+* <a href="http://boliquan.com/wp-clean-up/">WP Clean Up</a> | <a href="http://wordpress.org/plugins/wp-clean-up/">Download</a>
+* <a href="http://boliquan.com/wp-smtp/">WP SMTP</a> | <a href="http://wordpress.org/plugins/wp-smtp/">Download</a>
+* <a href="http://boliquan.com/wp-code-highlight/">WP Code Highlight</a> | <a href="http://wordpress.org/plugins/wp-code-highlight/">Download</a>
+* <a href="http://boliquan.com/wp-anti-spam/">WP Anti Spam</a> | <a href="http://wordpress.org/plugins/wp-anti-spam/">Download</a>
+* <a href="http://boliquan.com/yg-share/">YG Share</a> | <a href="http://wordpress.org/plugins/yg-share/">Download</a>
 * <a href="http://boliquan.com/">BoLiQuan</a>
 * <a href="http://boliquan.com/">玻璃泉</a>
 * <a href="http://boliquan.com/">夜光</a>
@@ -62,6 +62,10 @@ Related Links:
 
 
 == Changelog ==
+
+= 1.8.7 =
+
+* Some optimization
 
 = 1.8.6 =
 
