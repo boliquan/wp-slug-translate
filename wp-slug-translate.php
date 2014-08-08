@@ -3,7 +3,7 @@
 Plugin Name: WP Slug Translate
 Plugin URI: http://boliquan.com/wp-slug-translate/
 Description: WP Slug Translate can translate the post slug into English. It will take the post ID as slug when translation failure.
-Version: 1.8.7
+Version: 1.8.8
 Author: BoLiQuan
 Author URI: http://boliquan.com/
 Text Domain: WP-Slug-Translate
@@ -44,7 +44,7 @@ class WstHttpRequest
 	}
 }
 
-class WstBingTranslator extends WstHttpRequest
+class WstMicrosoftTranslator extends WstHttpRequest
 {
 	private $_clientID = CLIENTID;
 	private $_clientSecret = CLIENTSECRET;
@@ -113,8 +113,8 @@ function wp_slug_translate($postid){
 	}
 
 	$post_title = str_replace(array('_','/'),array(' ',' '),$post_title);
-	$wst_bing= new WstBingTranslator();
-	$wst_title = sanitize_title( $wst_bing->translate($post_title) );
+	$wst_microsoft= new WstMicrosoftTranslator();
+	$wst_title = sanitize_title( $wst_microsoft->translate($post_title) );
 	if( strlen($wst_title) < 2 ){
 		$wst_title = $postid;
 	}
@@ -135,8 +135,8 @@ function wp_slug_translate($postname){
 	if( !empty($post_name) && !is_numeric($post_name) ) return str_replace('_','-',$post_name);
 
 	$post_title = str_replace(array('_','/'),array(' ',' '),$post_title);
-	$wst_bing= new WstBingTranslator();
-	$wst_title = sanitize_title( $wst_bing->translate($post_title) );
+	$wst_microsoft= new WstMicrosoftTranslator();
+	$wst_title = sanitize_title( $wst_microsoft->translate($post_title) );
 	
 	return $wst_title;
 }

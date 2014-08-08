@@ -4,8 +4,8 @@ Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_i
 Tags: wp slug translate,wp slug translator,wp slug,slug,translate,bing,bing translator,post name,post id,post title,post slug,translator,translation,permalink,english,seo,url,title,auto slug,translate title,translate permalink,post,cos slug translator,slug translator,microsoft translator,api
 License: GPLv2
 Requires at least: 2.7
-Tested up to: 3.9.1
-Stable tag: 1.8.7
+Tested up to: 3.9.2
+Stable tag: 1.8.8
 
 WP Slug Translate can translate the post slug into English. It will take the post ID as slug when translation failure.
 
@@ -16,9 +16,9 @@ WP Slug Translate can translate the post slug into english.
 It will take the post ID as slug when translation failure.
 If you enter the slug manually, the result will depend on you have entered.
 WP Slug Translate won't overwrite an existing slug, you can try to re-translate by deleting the existing one.
-38 languages supported, powered by Microsoft Translator API.
+45 languages supported, powered by Microsoft Translator API.
 It can make your URL looks better and shoud be more SEO friendly.
-You can apply for your own ClientID and ClientSecret on the Windows Azure Marketplace, you can also use the default one, up to 2 million characters a month every account.
+You can apply for your own ClientID and ClientSecret on the Microsoft Azure Marketplace, you can also use the default one, up to 2 million characters a month every account.
 You need to choose your language on the settings page.
 It can delete its own options if you need to deactivate it, so it is a green plugin!
 
@@ -27,8 +27,8 @@ It can delete its own options if you need to deactivate it, so it is a green plu
 1. Download and extract `wp-slug-translate.zip` to `wp-content/plugins/`
 2. Activate the plugin through the "Plugins" menu in WordPress
 3. "Dashboard"->"Settings"->"WP Slug Translate"
-4. "Windows Azure Application": Input your own ClientID and ClientSecret, you can also use the default one, up to 2 million characters a month every account
-5. "Source Language": Choose your language, 38 languages supported, powered by Microsoft Translator API
+4. "Microsoft Azure Application": Input your own ClientID and ClientSecret, you can also use the default one, up to 2 million characters a month every account
+5. "Source Language": Choose your language, 45 languages supported, powered by Microsoft Translator API
 6. "Second Mode": Running in the second mode, compatible with some synchronous plugins
 7. When you have written an article, click "Publish", then the post slug will be automatically translated into English
 
@@ -55,13 +55,17 @@ Related Links:
 1. Download and extract `wp-slug-translate.zip` to `wp-content/plugins/`
 2. Activate the plugin through the "Plugins" menu in WordPress
 3. "Dashboard"->"Settings"->"WP Slug Translate"
-4. "Windows Azure Application": Input your own ClientID and ClientSecret, you can also use the default one, up to 2 million characters a month every account
-5. "Source Language": Choose your language, 38 languages supported, powered by Microsoft Translator API
+4. "Microsoft Azure Application": Input your own ClientID and ClientSecret, you can also use the default one, up to 2 million characters a month every account
+5. "Source Language": Choose your language, 45 languages supported, powered by Microsoft Translator API
 6. "Second Mode": Running in the second mode, compatible with some synchronous plugins
 7. When you have written an article, click "Publish", then the post slug will be automatically translated into English
 
 
 == Changelog ==
+
+= 1.8.8 =
+
+* Add other languages supported
 
 = 1.8.7 =
 
@@ -73,7 +77,7 @@ Related Links:
 
 = 1.8.5 =
 
-* Add the tutorial of Windows Azure Application
+* Add the tutorial of Microsoft Azure Application
 * Register Setting
 * Some optimization
 
@@ -110,7 +114,7 @@ Related Links:
 = 1.7.0 =
 
 * Add admin page
-* 38 languages supported
+* 45 languages supported
 
 = 1.0.1 =
 

@@ -36,8 +36,8 @@ function wp_slug_translate_page(){
 <table class="form-table">
 	<tr valign="top">
 		<th scope="row">
-			Windows Azure Application<br />
-			<span style="font-family:Tahoma,sans-serif;font-size:12px;"><a href="https://datamarket.azure.com/dataset/1899a118-d202-492c-aa16-ba21c33c06cb" title="Step One" target="_blank">Subscribe</a> | <a href="https://datamarket.azure.com/developer/applications/register" title="Step Two" target="_blank">Register</a> | <a href="http://boliquan.com/windows-azure-application/" title="<?php _e('Apply for your own ClientID and ClientSecret','WP-Slug-Translate'); ?>" target="_blank"><?php _e('Tutorial','WP-Slug-Translate'); ?></a></span>
+			Microsoft Azure Application<br />
+			<span style="font-family:Tahoma,sans-serif;font-size:12px;"><a href="https://datamarket.azure.com/dataset/1899a118-d202-492c-aa16-ba21c33c06cb" title="Step One" target="_blank">Subscribe</a> | <a href="https://datamarket.azure.com/developer/applications/register" title="Step Two" target="_blank">Register</a> | <a href="http://boliquan.com/microsoft-azure-application/" title="<?php _e('Apply for your own ClientID and ClientSecret','WP-Slug-Translate'); ?>" target="_blank"><?php _e('Tutorial','WP-Slug-Translate'); ?></a></span>
 		</th>
 		<td>
 			<label>
@@ -74,15 +74,20 @@ function wp_slug_translate_page(){
 				<option value="ht" <?php if (get_option('wp_slug_translate_language') == 'ht') { echo 'selected="selected"'; } ?>>ht - Haitian Creole</option>
 				<option value="he" <?php if (get_option('wp_slug_translate_language') == 'he') { echo 'selected="selected"'; } ?>>he - Hebrew</option>
 				<option value="hi" <?php if (get_option('wp_slug_translate_language') == 'hi') { echo 'selected="selected"'; } ?>>hi - Hindi</option>
+				<option value="mww" <?php if (get_option('wp_slug_translate_language') == 'mww') { echo 'selected="selected"'; } ?>>mww - Hmong Daw</option>
 				<option value="hu" <?php if (get_option('wp_slug_translate_language') == 'hu') { echo 'selected="selected"'; } ?>>hu - Hungarian</option>
 				<option value="id" <?php if (get_option('wp_slug_translate_language') == 'id') { echo 'selected="selected"'; } ?>>id - Indonesian</option>
 				<option value="it" <?php if (get_option('wp_slug_translate_language') == 'it') { echo 'selected="selected"'; } ?>>it - Italian</option>
 				<option value="ja" <?php if (get_option('wp_slug_translate_language') == 'ja') { echo 'selected="selected"'; } ?>>ja - Japanese</option>
+				<option value="tlh" <?php if (get_option('wp_slug_translate_language') == 'tlh') { echo 'selected="selected"'; } ?>>tlh - Klingon</option>
+				<option value="tlh-Qaak" <?php if (get_option('wp_slug_translate_language') == 'tlh-Qaak') { echo 'selected="selected"'; } ?>>tlh-Qaak - Klingon(pIqaD)</option>
 				<option value="ko" <?php if (get_option('wp_slug_translate_language') == 'ko') { echo 'selected="selected"'; } ?>>ko - Korean</option>
 				<option value="lv" <?php if (get_option('wp_slug_translate_language') == 'lv') { echo 'selected="selected"'; } ?>>lv - Latvian</option>
 				<option value="lt" <?php if (get_option('wp_slug_translate_language') == 'lt') { echo 'selected="selected"'; } ?>>lt - Lithuanian</option>
-				<option value="mww" <?php if (get_option('wp_slug_translate_language') == 'mww') { echo 'selected="selected"'; } ?>>mww - Hmong Daw</option>
+				<option value="ms" <?php if (get_option('wp_slug_translate_language') == 'ms') { echo 'selected="selected"'; } ?>>ms - Malay</option>
+				<option value="mt" <?php if (get_option('wp_slug_translate_language') == 'mt') { echo 'selected="selected"'; } ?>>mt - Maltese</option>
 				<option value="no" <?php if (get_option('wp_slug_translate_language') == 'no') { echo 'selected="selected"'; } ?>>no - Norwegian</option>
+				<option value="fa" <?php if (get_option('wp_slug_translate_language') == 'fa') { echo 'selected="selected"'; } ?>>fa - Persian</option>
 				<option value="pl" <?php if (get_option('wp_slug_translate_language') == 'pl') { echo 'selected="selected"'; } ?>>pl - Polish</option>
 				<option value="pt" <?php if (get_option('wp_slug_translate_language') == 'pt') { echo 'selected="selected"'; } ?>>pt - Portuguese</option>
 				<option value="ro" <?php if (get_option('wp_slug_translate_language') == 'ro') { echo 'selected="selected"'; } ?>>ro - Romanian</option>
@@ -94,7 +99,9 @@ function wp_slug_translate_page(){
 				<option value="th" <?php if (get_option('wp_slug_translate_language') == 'th') { echo 'selected="selected"'; } ?>>th - Thai</option>
 				<option value="tr" <?php if (get_option('wp_slug_translate_language') == 'tr') { echo 'selected="selected"'; } ?>>tr - Turkish</option>
 				<option value="uk" <?php if (get_option('wp_slug_translate_language') == 'uk') { echo 'selected="selected"'; } ?>>uk - Ukrainian</option>
+				<option value="ur" <?php if (get_option('wp_slug_translate_language') == 'ur') { echo 'selected="selected"'; } ?>>ur - Urdu</option>
 				<option value="vi" <?php if (get_option('wp_slug_translate_language') == 'vi') { echo 'selected="selected"'; } ?>>vi - Vietnamese</option>
+				<option value="cy" <?php if (get_option('wp_slug_translate_language') == 'cy') { echo 'selected="selected"'; } ?>>cy - Welsh</option>
 			</select>
 			&nbsp;&nbsp;&nbsp;
 			To:
@@ -146,8 +153,8 @@ function wp_slug_translate_page(){
 <h2>Description</h2>
 <p>
  1. WP Slug Translate can translate the post slug into english. It will take the post ID as slug when translation failure.<br />
- 2. "Windows Azure Application": Input your own ClientID and ClientSecret. Up to 2 million characters a month every account.<br />
- 3. "Source Language": Choose your language, 38 languages supported, powered by Microsoft Translator API.<br />
+ 2. "Microsoft Azure Application": Input your own ClientID and ClientSecret. Up to 2 million characters a month every account.<br />
+ 3. "Source Language": Choose your language, 45 languages supported, powered by Microsoft Translator API.<br />
  4. "Second Mode": Running in the second mode, compatible with some synchronous plugins.<br />
  5. When you have written an article, click "Publish", then the post slug will be automatically translated into English.<br />
  6. For more information, please visit: <a href="http://boliquan.com/wp-slug-translate/" target="_blank">WP Slug Translate</a> | <a href="http://wordpress.org/plugins/wp-slug-translate/" target="_blank">Usage</a> | <a href="http://wordpress.org/plugins/wp-slug-translate/" target="_blank">Download</a>
